@@ -29,11 +29,11 @@ const DateForm = ({ createDate }) => {
 
     // validating
     if (
-      pet.trim() === "" ||
-      ownerName.trim() === "" ||
-      date.trim() === "" ||
-      time.trim() === "" ||
-      symptoms.trim() === ""
+      !pet.trim() ||
+      !ownerName.trim() ||
+      !date.trim() ||
+      !time.trim() ||
+      !symptoms.trim()
     ) {
       setError(true);
       return;
@@ -46,7 +46,7 @@ const DateForm = ({ createDate }) => {
     appoiment.id = uuid();
 
     // create Appoiment
-    createDate(appoiment)
+    createDate(appoiment);
 
     // reset form
     setAppoiment({
@@ -55,12 +55,12 @@ const DateForm = ({ createDate }) => {
       date: "",
       time: "",
       symptoms: "",
-    })
+    });
   };
 
   return (
     <>
-      <h2>Create Appoiment</h2>
+      <h2>Create Appointment</h2>
       {error ? <p className="error-alert">All fields are required</p> : null}
       <form onSubmit={submitAppoiment}>
         <label>Pet Name</label>
@@ -106,7 +106,7 @@ const DateForm = ({ createDate }) => {
           value={symptoms}
         />
         <button type="submit" className="u-full-width button-primary">
-          Add Appoiment
+          Add Appointment
         </button>
       </form>
     </>

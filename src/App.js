@@ -27,7 +27,7 @@ function App() {
   };
 
   // function that delete a date by its id
-  const delateDate = (id) => {
+  const deleteDate = (id) => {
     const newDates = dates.filter((date) => date.id !== id);
     setDates(newDates);
   };
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      <h1>Appoiment Manager</h1>
+      <h1>Appointment Manager</h1>
       <div className="container">
         <div className="row">
           <div className="one-half column">
@@ -46,7 +46,7 @@ function App() {
           </div>
           <div className="one-half column">
             <h2>{title}</h2>
-            <Date date={dates} delateDate={delateDate} />
+            <Date date={dates} deleteDate={deleteDate} />
           </div>
         </div>
       </div>

@@ -8,9 +8,9 @@ body {
   font-family: sans-serif;
   background-image: linear-gradient(
     -225deg,
-    #a445b2 0%,
-    #d41872 52%,
-    #ff0066 100%
+    #6174c8 0%,
+    #5a18d4 52%,
+    #322a66 100%
   );
   min-height: 100%;
   padding-bottom: 5rem;
@@ -50,9 +50,24 @@ input[type="time"] {
   color: black;
 }
 
+.date__pet-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.date__time-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.date__time-info p:first-child {
+  margin-right: 4rem;
+}
+
 .date p {
   font-weight: bold;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
 }
 
 .date p span {
@@ -69,19 +84,26 @@ input[type="time"] {
   border-bottom-right-radius: 1rem;
 }
 
-.button.delate,
-.button.delate:hover {
+.button.delete,
+.button.delete:hover {
   background-color: #c10059;
   color: white;
   margin-top: 2rem;
 }
 
 .error-alert {
-  background-color: white;
-  color: red;
+  background-color: #C10059;
+  color: white;
   padding: 1rem;
   font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
   font-family: "Staatliches", cursive;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .date div {
+    flex-direction: column;
+  }
 }
